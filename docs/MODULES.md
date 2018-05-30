@@ -23,6 +23,9 @@ type safe implementation of hash maps borrowed from [this repository](https://gi
 ### gen
 called by the parser to generate machine codes (enumerated, unsigned integers) for the virtual machine
 
+### dyad
+an asynchronous networking library. used by the server module to allow connections, use event handlers etc. [dyad on github](https://github.com/rxi/dyad)
+
 ### server
 opens a port to receive incoming TCP packets. reads incoming requests and passes them along in this order: analyzer => parser => code gen => vm => sends back output from vm as response.
 

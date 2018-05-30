@@ -23,6 +23,11 @@
 #define DEBUG_H
 #endif
 
+#ifndef SERVER_H 
+#include "server.h"
+#define SERVER_H 
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 // this will start up the database server. it's a c requirement to have a main
 // function for your program. you may pass in a count of arguments, as well as
@@ -108,8 +113,10 @@ int main (int argc, char* argv []) {
   // virtual machine. so that It can pass off any text data packets to the
   // analyzer -> parser -> code_generator -> virtual_machine 
   
+  int server_port = atoi(fooql_options[FOOQL_PORT]); 
+  
   // something like
-  // open_port(<ARGS FROM CONFIG>);
+  start_server(server_port);
   // ^ that should open an event loop
 
 }

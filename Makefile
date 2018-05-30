@@ -4,7 +4,7 @@ SRC=./src
 BIN=./bin
 INC=-I./src/include
 
-MODULES=err debug map main analyzer parser server storage vm
+MODULES=err debug dyad map server main analyzer parser storage vm
 
 default: fooql
 
@@ -19,4 +19,4 @@ fooql: objects
 .Phony : clean
 
 clean:
-	rm -f $(BIN)/*.o *.o
+	rm -f $(BIN)/*.o *.o $(BIN)/fooql
