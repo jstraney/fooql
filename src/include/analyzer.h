@@ -1,4 +1,5 @@
 #define ANALYZER_MAX_TOKEN_BUFFER_SIZE 4000
+#define ANALYZER_MAX_TOKEN_LENGTH 64 
 
 // types of tokens
 typedef const enum {
@@ -8,4 +9,19 @@ typedef const enum {
   newline_token, semicolon_token
 } TokenType;
 
-int read_token(char *text);
+typedef struct {
+  TokenType type;
+  // a lexeme is the 'value' of the token, for instance, 
+  // x and y are both identifiers, but their lexemes are
+  // "x" and "y" respectively
+  char * lexeme;
+} Token;
+
+Token * analyzer_new_token (TokenType type, char * lexeme);
+
+void analyzer_free_token (Token *token);
+
+void analyzer_read_tokens(char *text);
+
+// flush the analyzer buffer
+void analyzer_flush_buffer();

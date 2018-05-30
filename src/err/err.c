@@ -20,7 +20,7 @@
 
 // borrowed from this stack overflow post:
 // https://bit.ly/2J0p8pW
-void raise_exception(char *filename, int line, char *format_str, ...) {
+void err_raise_exception(char *filename, int line, char *format_str, ...) {
 
   va_list args; 
 

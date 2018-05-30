@@ -28,6 +28,16 @@
 #define DYAD_H
 #endif
 
+#ifndef ANALYZER_H 
+#include "analyzer.h"
+#define ANALYZER_H 
+#endif
+
+#ifndef UTIL_H 
+#include "util.h"
+#define UTIL_H 
+#endif
+
 // server uses the dyad library to open up a server. used example code in
 // verbatim from https://github.com/rxi/dyad
 static void on_data (dyad_Event *e) {
@@ -49,17 +59,26 @@ static void on_data (dyad_Event *e) {
   debug_print("%s\n", e->data);
 
   // get data from the stream
-  // char * data = e->data;
+  char *text = e->data;
 
   // pass that data to the lexical analyzer
+  analyzer_read_tokens(text);
    
   // now pass the lexemes to the parser (calls code generator)
+  // Token *tokens = analyzer_get_tokens();
+  
+  // get machine codes from parser
+  // parser_parse_tokens(tokens);
+  
+  // get machine codes from code generator
+  // Code *codes = gen_get_machine_codes();
   
   // now use machine code in virtual machine
+  // char *response = vm_run_codes(codes);
   
   // get output from VM and send to client
 
-  // close stream with client
+  // close stream with client (I think)
   dyad_end(e->stream);
 
 }
