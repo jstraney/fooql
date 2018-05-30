@@ -28,7 +28,7 @@ for more information on modules, read more on available [modules](docs/MODULES.m
 
 ## Language
 I have started mapping out the formal grammar tree of FOOQL. It's starting to look (more or less) like standard SQL
-the grammar is documented [here](docs/GRAMMAR.md)
+the grammar is documented [here](docs/GRAMMAR.txt)
 
 ## Practices
 I wanted to document some project specifications (in case other maintainers or contributors come along), to find more info on style guide and best practices, read [this](docs/PRACTICES.md)
